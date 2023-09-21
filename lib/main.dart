@@ -1,3 +1,4 @@
+import 'package:challenge_flutter/details.dart';
 import 'package:challenge_flutter/networking.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Home(),
+      routes: {'/details': (context) => Details()},
     );
   }
 }
@@ -38,17 +40,23 @@ class HomeState extends State<Home> {
         future: posts,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Text('Carregando');
+            return Center(child: CircularProgressIndicator());
+            //Loading
           } else if (snapshot.hasError) {
-            return Text('Error');
+            return Center(child: Text('Error'));
+            //Erro
           } else if (snapshot.data!.isEmpty) {
-            return Text('Vazio');
+            return Center(child: Text('Vazio'));
+            //Empty
           } else {
             print(snapshot.data!);
             return ListView.builder(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 return ListTile(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/details');
+                  },
                   title: Text(snapshot.data![index].title),
                   //return Text(snapshot.data![1].title);
                 );
