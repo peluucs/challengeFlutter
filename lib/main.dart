@@ -1,21 +1,18 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'package:http/http.dart' as http;
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void main() => getData();
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-    );
+Future getData() async {
+  http.Response response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/posts'),
+  );
+  if (response.statusCode == 200) {
+    final post = jsonDecode(response.body);
+
+    return print(post);
+  } else {
+    print(response.statusCode);
   }
 }
