@@ -16,6 +16,13 @@ class Post {
   });
 }
 
+class User {
+  final String username;
+  final String email;
+
+  User({required this.username, required this.email});
+}
+
 Future<List<Post>> getPosts() async {
   http.Response response = await http.get(
     Uri.parse('https://jsonplaceholder.typicode.com/posts'),
@@ -37,5 +44,18 @@ Future<List<Post>> getPosts() async {
   } else {
     print(response.statusCode);
     return [];
+  }
+}
+
+Future<User> getUser(int idUser) async {
+  http.Response response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/users/$idUser'),
+  );
+  if (response.statusCode == 200) {
+    final decodedUser = jsonDecode(response.body);
+    return User(username: decodedUser['username'], email: decodedUser['email']);
+  } else {
+    print(response.statusCode);
+    throw 'ERROR';
   }
 }

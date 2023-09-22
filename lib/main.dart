@@ -2,7 +2,7 @@ import 'package:challenge_flutter/details.dart';
 import 'package:challenge_flutter/networking.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => getUser(1); //runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -55,7 +55,8 @@ class HomeState extends State<Home> {
               itemBuilder: (context, index) {
                 return ListTile(
                   onTap: () {
-                    Navigator.pushNamed(context, '/details');
+                    Navigator.pushNamed(context, '/details',
+                        arguments: snapshot.data![index]);
                   },
                   title: Text(snapshot.data![index].title),
                   //return Text(snapshot.data![1].title);
