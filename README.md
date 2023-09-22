@@ -1,16 +1,16 @@
-# challenge_flutter
+### Descrição
 
-A new Flutter project.
+Neste aplicativo, o usuário pode ver uma lista de títulos de posts, e clicando em algum título na lista, pode ter acesso ao conteúdo do post e também algumas informações sobre o autor. 
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### Considerações
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+No desafio, foram solicitados os seguintes requisitos: 
+![image](https://github.com/peluucs/challengeFlutter/assets/95884295/024ebc6e-dfc8-4d92-b076-5833d6cadcd7)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Algumas coisas foram simples, outras mais difíceis, e outras não consegui realizar por falta de conhecimento. Acredito que a parte mais difícil foi me situar dentro do código quando tentava utilizar os dados que me foi fornecido pela API. Creio que essa dificuldade se deu pelo tempo que passei sem programar.
+
+Em relação a gerenciamento de estado, não utilizei nenhuma arquitetura. Criei na mão pois não tenho conhecimento em Bloc, MobX ou outra arquitetura específica. 
+Sobre testes unitários, também não os fiz. Apesar de saber da importância dos testes, ainda não tenho o conhecimento necessário para aplicá-los. 
+O design também ficou bem simples, mas acredito que tenha cumprido a proposta.
