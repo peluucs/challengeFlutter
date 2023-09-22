@@ -8,7 +8,7 @@ Neste aplicativo, o usuário pode ver uma lista de títulos de posts, e clicando
 
 ## Programação
 
-Basicamente fiz uma chamada da API [jsonplaceholder](https://jsonplaceholder.typicode.com) e com ela, obti dados para a criação do layout. Tive que aprender algumas coisas específicas que nunca tinha visto antes, como a criação de um FutureBuilder, que basicamente criava a minha lista baseando-se em informações futuras que iria chegar pela API. Também usei uma ListView, que era algo novo pra mim pois ainda não tinha feito nenhum aplicativo que utilizasse listas. 
+Basicamente fiz uma chamada da API [jsonplaceholder](https://jsonplaceholder.typicode.com) e com ela, obtive dados para a criação do layout. Tive que aprender algumas coisas específicas que nunca tinha visto antes, como a criação de um FutureBuilder, que basicamente criava a minha lista baseando-se em informações futuras que iria chegar pela API. Também usei uma ListView, que era algo novo pra mim pois ainda não tinha feito nenhum aplicativo que utilizasse listas. 
 
 
 
